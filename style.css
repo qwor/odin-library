@@ -1,0 +1,225 @@
+:root {
+    --clr-light: #fffbfb;
+    --clr-body: #f0eef1;
+    --clr-black: #050505;
+    --clr-btn: hsl(280, 10%, 88%);
+    --clr-light-red: hsl(0, 100%, 80%);
+    --clr-error: hsl(0, 100%, 60%);
+    --clr-light-green: hsl(118, 100%, 80%);
+    --clr-modal: rgba(0, 0, 0, 0.4);
+    --shadow: rgba(0, 0, 0, 0.16) 0 1px 4px;
+
+    font-size: 62.5%;
+}
+
+/* CSS RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--clr-body);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    color: var(--clr-black);
+    font-weight: 500;
+}
+
+header {
+    background-color: var(--clr-light);
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+button, input {
+    outline: none;
+}
+
+.btn {
+    padding: 0.8rem 2.5rem;
+    border: none;
+    background-color: var(--clr-btn);
+    border-radius: 8px;
+    transition: filter 0.2s ease-in-out;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.btn.btn-green {
+    background-color: var(--clr-light-green);
+}
+
+.btn.btn-red {
+    background-color: var(--clr-light-red);
+}
+
+.btn.login-btn {
+    font-size: 1.8rem;
+}
+
+.grid-controls .btn {
+    font-size: 2.4rem;
+    font-weight: 600;
+}
+
+.btn:hover, input[type='checkbox']:hover {
+    filter: brightness(85%);
+    cursor: pointer;
+}
+
+.grid-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+}
+
+main {
+    margin: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    gap: 5rem;
+    margin-bottom: auto;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--clr-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    padding: 2rem;
+    font-size: 2rem;
+    box-shadow: var(--shadow);
+    border-radius: 1rem;
+}
+
+.card .btn {
+    align-self: stretch;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: 2rem;
+    padding: 3rem;
+    margin-top: 4rem;
+}
+
+.fa-github {
+    height: 3rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+    transform: scale(1.2) rotate(360deg);
+}
+
+a {
+    color: inherit;
+    display: grid;
+    place-items: center;
+}
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--clr-modal);
+    display: grid;
+    place-items: center;
+    display:grid;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+form {
+    background-color: var(--clr-btn);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 35rem;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+    font-size: 2rem;
+    border-radius: 1rem;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+}
+
+#error {
+    padding: 1rem;
+    text-align: center;
+    color: var(--clr-error);
+    display:none;
+}
+
+#error.active {
+    display: block;
+}
+
+.modal.active form {
+    transform: scale(1);
+}
+
+input[type='text'], input[type='number'] {
+    background-color: var(--clr-light);
+    border: none;
+    border-radius: 5px;
+    padding: 1rem 0.5rem;
+    font-size: inherit;
+    align-self: stretch;
+}
+
+input[type='number'] {
+    appearance: textfield;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+input[type='checkbox'] {
+    transform: scale(1.5);
+    border: none;
+    background-color: var(--clr-light);
+    accent-color: var(--clr-light);
+}
+
+input.btn {
+    align-self: stretch;
+}

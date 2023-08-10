@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="img/png" size="96x96" rel="icon" href="/icon.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/2096e10655.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+        <div class="logo">library</div>
+        <button class="btn login-btn">Log in</button>
+    </header>
+    <div class="grid-controls">
+        <button class="btn add-btn">+ Add book</button>
+        <button class="btn clear-btn">- Clear library</button>
+    </div>
+    <main>
+    </main>
+    <footer>
+        <p>
+            Copyright © 
+            <script>
+                document.write(new Date().getFullYear())
+            </script> 
+            qwor
+        </p>
+        <a href="https://github.com/qwor" target="_blank">
+            <i class="fab fa-github"></i>
+        </a>
+    </footer>
+    <div class="modal">
+        <form id="add-form">
+            <h2>Add new book</h2>
+            <input type="text" placeholder="Title" id="input-title" autocomplete="off" required>
+            <input type="text" placeholder="Author" id="input-author" autocomplete="off" required>
+            <input type="number" placeholder="Pages" id="input-pages" autocomplete="off" 
+            min="1" max="100" required>
+            <div class="form-group">
+                <label>Have you read it?</label>
+                <input type="checkbox" value="false" id="input-read">
+            </div>
+            <p id="error"></p>
+            <input type="submit" value="Submit" class="btn btn-green" id="add-submit">
+        </form>
+    </div>
+</body>
+</html>
